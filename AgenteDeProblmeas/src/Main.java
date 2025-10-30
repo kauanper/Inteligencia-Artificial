@@ -121,5 +121,14 @@ public class Main {
             }
             System.out.println();
         }
+
+        No resultado = BuscaCustoUniforme.buscar(arad, bucharest);
+
+        if (resultado != null) {
+            BuscaCustoUniforme.mostrarCaminho(resultado);
+        } else {
+            System.out.println("Nenhum caminho encontrado!");
+        }
+
     }
 }
