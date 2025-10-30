@@ -1,3 +1,5 @@
+package AgenteDeProblema;
+
 public class Transicao {
     public Estado estado;
     public int custo;

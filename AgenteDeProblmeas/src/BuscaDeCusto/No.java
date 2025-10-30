@@ -1,3 +1,8 @@
+package BuscaDeCusto;
+
+import AgenteDeProblema.Estado;
+import AgenteDeProblema.Transicao;
+
 public class No implements Comparable<No> {
     public Estado estado;
     public No pai;

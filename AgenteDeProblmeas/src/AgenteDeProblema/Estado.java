@@ -1,3 +1,5 @@
+package AgenteDeProblema;
+
 import java.util.ArrayList;
 
 public class Estado {

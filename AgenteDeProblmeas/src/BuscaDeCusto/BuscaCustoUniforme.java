@@ -1,3 +1,8 @@
+package BuscaDeCusto;
+
+import AgenteDeProblema.Estado;
+import AgenteDeProblema.Transicao;
+
 import java.util.*;
 
 public class BuscaCustoUniforme {

@@ -1,3 +1,9 @@
+import AgenteDeProblema.Estado;
+import AgenteDeProblema.Mapa;
+import AgenteDeProblema.Transicao;
+import BuscaDeCusto.BuscaCustoUniforme;
+import BuscaDeCusto.No;
+
 public class Main {
     public static void main(String[] args) {
         Estado arad = new Estado("Arad");
