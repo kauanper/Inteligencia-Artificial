@@ -25,7 +25,7 @@ public class BuscaCustoUniforme {
 
             explorados.add(atual.estado);
 
-            //é como se fosse a lista de adj do d cada nó
+            //é como se fosse a lista de adj d cada nó
             for (Transicao transicao : atual.estado.transicoes) {
                 Estado vizinho = transicao.estado;
                 int novoCusto = atual.custoCaminho + transicao.custo;
@@ -35,11 +35,14 @@ public class BuscaCustoUniforme {
                     borda.add(filho);
                 }
             }
+
         }
 
         return null;
     }
 
+
+    //apenas mostrar o caminho msm
     public static void mostrarCaminho(No objetivo) {
         ArrayList<No> caminho = new ArrayList<>();
         No atual = objetivo;

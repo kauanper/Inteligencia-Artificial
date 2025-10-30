@@ -122,7 +122,7 @@ public class Main {
             System.out.println();
         }
 
-        No resultado = BuscaCustoUniforme.buscar(arad, bucharest);
+        No resultado = BuscaCustoUniforme.buscar(fagaras, urziceni);
 
         if (resultado != null) {
             BuscaCustoUniforme.mostrarCaminho(resultado);
