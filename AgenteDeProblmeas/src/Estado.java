@@ -8,5 +8,4 @@ public class Estado {
         this.nome = name;
         this.transicoes = new ArrayList<>();
     }
-
 }

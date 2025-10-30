@@ -6,5 +6,4 @@ public class Transicao {
         this.estado = estado;
         this.custo = custo;
     }
-
 }
