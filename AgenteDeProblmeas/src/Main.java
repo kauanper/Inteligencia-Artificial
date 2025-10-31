@@ -3,6 +3,7 @@ import AgenteDeProblema.Mapa;
 import AgenteDeProblema.Transicao;
 import BuscaDeCusto.BuscaCustoUniforme;
 import BuscaDeCusto.No;
+import BuscaEmLargura.BuscaEmLargura;
 
 public class Main {
     public static void main(String[] args) {
@@ -128,16 +129,16 @@ public class Main {
             System.out.println();
         }
 
-        No resultado = BuscaCustoUniforme.buscar(fagaras, urziceni);
-
+        No resultado = BuscaEmLargura.buscar(fagaras, mehadia);
+        System.out.println("Busca Em Largura");
         if (resultado != null) {
             BuscaCustoUniforme.mostrarCaminho(resultado);
         } else {
             System.out.println("Nenhum caminho encontrado!");
         }
 
-        No resultado2 = BuscaCustoUniforme.buscar(fagaras, urziceni);
-
+        No resultado2 = BuscaCustoUniforme.buscar(mehadia, urziceni);
+        System.out.println("\nBusca Uniforme");
         if (resultado2 != null) {
             BuscaCustoUniforme.mostrarCaminho(resultado2);
         } else {
