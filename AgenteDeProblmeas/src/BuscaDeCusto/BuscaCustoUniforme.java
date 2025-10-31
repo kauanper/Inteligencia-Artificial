@@ -9,43 +9,44 @@ public class BuscaCustoUniforme {
 
     public static No buscar(Estado inicial, Estado objetivo) {
 
-        //estado inicial do problema
-        No noInicial = new No(inicial, null, null, 0);
+        No raiz = new No(inicial, null, null, 0);
 
-        //criar fila de prioridade e adicionar nossa origem
-        PriorityQueue<No> borda = new PriorityQueue<>();
-        borda.add(noInicial);
+        if (raiz.estado.equals(objetivo)) {
+            return raiz;
+        }
 
-        //armazenar estados já visitados
+        PriorityQueue<No> borda = new PriorityQueue<>(Comparator.comparingInt(no -> no.custoCaminho));
+        borda.add(raiz);
+
         HashSet<Estado> explorados = new HashSet<>();
 
-        //enquanto fila estiver vazia faça
         while (!borda.isEmpty()) {
-
             No atual = borda.poll();
+            explorados.add(atual.estado);
 
             if (atual.estado.equals(objetivo)) {
                 return atual;
             }
 
-            explorados.add(atual.estado);
-
-            //é como se fosse a lista de adj d cada nó
             for (Transicao transicao : atual.estado.transicoes) {
-                Estado vizinho = transicao.estado;
-                int novoCusto = atual.custoCaminho + transicao.custo;
-
-                if (!explorados.contains(vizinho)) {
-                    No filho = new No(vizinho, atual, transicao, novoCusto);
+                No filho = new No(transicao.estado, atual, transicao, atual.custoCaminho + transicao.custo);
+                boolean naBorda = borda.stream().anyMatch(no -> no.estado.equals(filho.estado));
+                if (!explorados.contains(filho.estado) && !naBorda) {
                     borda.add(filho);
+                } else if (naBorda) {
+                    No existente = borda.stream()
+                            .filter(no -> no.estado.equals(filho.estado))
+                            .findFirst()
+                            .orElse(null);
+                    if (existente != null && existente.custoCaminho > filho.custoCaminho) {
+                        borda.remove(existente);
+                        borda.add(filho);
+                    }
                 }
             }
-
         }
-
         return null;
     }
-
 
     //apenas mostrar o caminho msm
     public static void mostrarCaminho(No objetivo) {

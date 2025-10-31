@@ -38,7 +38,6 @@ public class BuscaEmLargura {
                 }
             }
         }
-
         return null;
     }
 }

@@ -129,7 +129,7 @@ public class Main {
             System.out.println();
         }
 
-        No resultado = BuscaEmLargura.buscar(fagaras, mehadia);
+        No resultado = BuscaEmLargura.buscar(oradea, fagaras);
         System.out.println("Busca Em Largura");
         if (resultado != null) {
             BuscaCustoUniforme.mostrarCaminho(resultado);
