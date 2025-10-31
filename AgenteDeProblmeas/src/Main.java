@@ -136,5 +136,13 @@ public class Main {
             System.out.println("Nenhum caminho encontrado!");
         }
 
+        No resultado2 = BuscaCustoUniforme.buscar(fagaras, urziceni);
+
+        if (resultado2 != null) {
+            BuscaCustoUniforme.mostrarCaminho(resultado2);
+        } else {
+            System.out.println("Nenhum caminho encontrado!");
+        }
+
     }
 }
