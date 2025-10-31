@@ -4,6 +4,7 @@ import AgenteDeProblema.Transicao;
 import BuscaDeCusto.BuscaCustoUniforme;
 import BuscaDeCusto.No;
 import BuscaEmLargura.BuscaEmLargura;
+import BuscaEmProfundidade.BuscaEmProfundidade;
 
 public class Main {
     public static void main(String[] args) {
@@ -129,7 +130,7 @@ public class Main {
             System.out.println();
         }
 
-        No resultado = BuscaEmLargura.buscar(oradea, fagaras);
+        No resultado = BuscaEmLargura.buscar(oradea, vaslui);
         System.out.println("Busca Em Largura");
         if (resultado != null) {
             BuscaCustoUniforme.mostrarCaminho(resultado);
@@ -137,10 +138,18 @@ public class Main {
             System.out.println("Nenhum caminho encontrado!");
         }
 
-        No resultado2 = BuscaCustoUniforme.buscar(mehadia, urziceni);
+        No resultado2 = BuscaCustoUniforme.buscar(oradea, vaslui);
         System.out.println("\nBusca Uniforme");
         if (resultado2 != null) {
             BuscaCustoUniforme.mostrarCaminho(resultado2);
+        } else {
+            System.out.println("Nenhum caminho encontrado!");
+        }
+
+        No resultado3 = BuscaEmProfundidade.buscar(oradea, vaslui);
+        System.out.println("\nBusca Em Profundidade");
+        if (resultado3 != null) {
+            BuscaCustoUniforme.mostrarCaminho(resultado3);
         } else {
             System.out.println("Nenhum caminho encontrado!");
         }
