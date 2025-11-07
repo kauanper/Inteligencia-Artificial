@@ -5,6 +5,7 @@ import BuscaDeCusto.BuscaCustoUniforme;
 import BuscaDeCusto.No;
 import BuscaEmLargura.BuscaEmLargura;
 import BuscaEmProfundidade.BuscaEmProfundidade;
+import BuscaGulosaDeMelhorEscolha.BuscaGulosa;
 import BuscaGulosaDeMelhorEscolha.Heuristica;
 import BuscaGulosaDeMelhorEscolha.TabelaHeuristica;
 
@@ -123,7 +124,7 @@ public class Main {
         mapa.estados.add(iasi);
         mapa.estados.add(neamt);
 
-        // imprime conexões
+        /* imprime conexões
         System.out.println("Cidades vizinhas de Arad:");
         for (Estado e : mapa.estados) {
             for (Transicao t : e.transicoes) {
@@ -131,6 +132,7 @@ public class Main {
             }
             System.out.println();
         }
+         */
 
         /*
         No resultado = BuscaEmLargura.buscar(oradea, vaslui);
@@ -221,6 +223,13 @@ public class Main {
         Heuristica zerind_h = new Heuristica(zerind, 374);
         h.AddEstado(zerind_h);
 
+        No resultado4 = BuscaGulosa.buscar(bucharest, eforie, h);
+        System.out.println("\nBusca Gulosa");
+        if (resultado4 != null) {
+            BuscaGulosa.mostrarCaminho(resultado4);
+        } else {
+            System.out.println("Nenhum caminho encontrado!");
+        }
 
     }
 }
